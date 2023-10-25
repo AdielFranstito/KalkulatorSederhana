@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Sederhana</title>
+  </head>
+
+  <body>
+    <input type="text" id="bilangan1" placeholder="Bilangan 1" /><br />
+    <input type="text" id="bilangan2" placeholder="Bilangan 2" /><br />
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="sin">sin</option>
+      <option value="cos">cos</option>
+      <option value="tan">tan</option>
+      <option value="^">^</option>
+      <option value="sqrt">Akar</option>
+      <option value="log">Log</option>
+    </select>
+    <button onclick="hitung()">Hitung</button>
+
+    <script>
+      function hitung() {
+        var bilangan1 = parseFloat(document.getElementById("bilangan1").value);
+        var bilangan2 = parseFloat(document.getElementById("bilangan2").value);
+        var operator = document.getElementById("operator").value;
+        var hasil = 0;
+
+        switch (operator) {
+          case "+":
+            hasil = bilangan1 + bilangan2;
+            break;
+          case "-":
+            hasil = bilangan1 - bilangan2;
+            break;
+          case "*":
+            hasil = bilangan1 * bilangan2;
+            break;
+          case "/":
+            hasil = bilangan1 / bilangan2;
+            break;
+          case "sin":
+            hasil = Math.sin(bilangan1);
+            break;
+          case "cos":
+            hasil = Math.cos(bilangan1);
+            break;
+          case "tan":
+            hasil = Math.tan(bilangan1);
+            break;
+          case "^":
+            hasil = Math.pow(bilangan1, bilangan2);
+            break;
+          case "sqrt":
+            hasil = Math.sqrt(bilangan1);
+            break;
+          case "log":
+            hasil = Math.log(bilangan1);
+            break;
+        }
+
+        alert("Hasil: " + hasil);
+      }
+    </script>
+  </body>
+</html>
